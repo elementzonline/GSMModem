@@ -1,0 +1,40 @@
+# mbim-set-ip script version 1.0
+# Modified mbimcli IPv4 IPv6 parsing script based on parts of project https://github.com/grandcentrix/thinkpad-x260-modem-scripts
+# Licensed under the Apache License, Version 2.0
+# Modified by Jörgen Storvist, Techship http://www.techship.com
+#
+# Further details in the Techship FAQ sections on using MBIM and setting correct modes in cellular modules:
+# https://techship.com/faq/how-to-set-up-a-simple-data-connection-over-the-mbim-interface-using-libmbim-and-driver-cdc-mbim-in-linux/
+#
+# Installation & Usage: 
+#
+# Verify that the cellular module is exposing the MBIM interface over the USB interface. 
+# Use mbimcli to check status for the cellular connection and enter the PIN code if necessary. 
+# Configure mbim-network.conf and place in /etc/ (example file included in the archive, check link bellow for details).
+# https://www.freedesktop.org/software/libmbim/man/latest/mbim-network.1.html
+# Start the mbim data connection with command:
+# mbim-network <MBIM-INTERFACE> start
+# Ensure execution of mbim-set-ip script with sufficient system priviledges
+# ./mbim-set-ip <MBIM-INTERFACE> <NETWORK-INTERFACE>
+#
+# Examples:
+# mbimcli -d /dev/cdc-wdm0 -p --query-device-caps
+# mbimcli -d /dev/cdc-wdm0 -p --enter-pin=1234
+# mbim-network /dev/cdc-wdm0 start
+# ./mbim-set-ip /dev/cdc-wdm0 wwan0
+#
+# You should now be able to ping over the data connection.
+# IP v4 ping: (only if IPv4 address was acquired from cellular module)
+# ping -4 -I wwan0 8.8.8.8
+# ping -4 -I wwan0 google.com
+
+# IP v6 ping: (only if IPv6 address was acquired from cellular module)
+# ping -6 -I wwan0 2001:4860:4860::8888
+# ping -6 -I wwan0 google.com
+#
+# The script relies on the linux tools mbimcli, ip, systemd-resolve
+# (Tested on libmbim 1.16.0 running on Ubuntu 18.10 cosmic (development) with kernel version 4.15.0)
+
+# Details on mbim-network and mbimcli
+# https://www.freedesktop.org/software/libmbim/man/latest/mbim-network.1.html
+# https://www.freedesktop.org/software/libmbim/man/latest/mbimcli.1.html
