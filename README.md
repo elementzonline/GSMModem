@@ -21,23 +21,25 @@ Features:
 
 * USB Driver for Microsoft Windows 2000/XP/Vista/Win7/Win8/Win10
 * USB Driver for Linux /Android
-RIL supporting for Android 2.4/4.0/5.0/6.0/7.0
-MBIM to Win8
-Firmware update via USB
-TCP/IP/IPV4/IPV6/Multi-PDP/FTP/FTPS /HTTP/HTTPS/DNS/MQTT
-SSL3.0/TLS1.0/TLS1.2
-DTMF (Sending and Receiving)
-Audio Playing
+* RIL supporting for Android 2.4/4.0/5.0/6.0/7.0
+* MBIM to Win8
+* Firmware update via USB
+* TCP/IP/IPV4/IPV6/Multi-PDP/FTP/FTPS /HTTP/HTTPS/DNS/MQTT
+* SSL3.0/TLS1.0/TLS1.2
+* DTMF (Sending and Receiving)
+* Audio Playing
+
+
 Interfaces:
 
-GNSS: GPS/GLONASS/Beidou/Galileo*•ADC
-MMC/SD
-Digital Audio through PCM
-(U)SIM card (1.8V/3.0V)
-Antenna: Solder pads for Primary, Rx-diversity and GNSS antennas
-GPIO
-UART
-USB2.0 with High speed up to 480Mbps
+* GNSS: GPS/GLONASS/Beidou/Galileo*•ADC
+* MMC/SD
+* Digital Audio through PCM
+* (U)SIM card (1.8V/3.0V)
+* Antenna: Solder pads for Primary, Rx-diversity and GNSS antennas
+* GPIO
+* UART
+* USB2.0 with High speed up to 480Mbps
 
 
 
